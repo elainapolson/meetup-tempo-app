@@ -1,0 +1,21 @@
+<div class="home">
+<%= link_to "HOME", "/" %>
+</div>
+
+<div align ="center">
+
+<h1><%= @category.name %> Playlist</h1>
+
+
+<% @category.songs.each do |song| %>
+
+<h2><%= link_to "#{song.title} (#{song.artist})", "/songs/#{song.id}" %></h2>
+
+<iframe src="https://embed.spotify.com/?uri=spotify:track:<%= song.track_url %>" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+
+<br>
+<br>
+
+<% end %>
+
+</div>
